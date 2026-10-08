@@ -42,7 +42,7 @@ jobs:
           else
             echo "stellar-scaffold already installed. Clear cache to force reinstall."
           fi
-      - run: npm ci
+      - run: npm install --legacy-peer-deps
       - run: npm run lint
       - run: npx prettier . --check
       - name: Build clients before building the project
@@ -51,3 +51,4 @@ jobs:
       - run: npm run build
       - name: Run tests
         run: npm test --if-present
+
